@@ -9,14 +9,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item <%= 'active' if request.path==my_portfolio_path %>">
-                    <%= link_to "my_portfolio", my_portfolio_path, class:'nav-link' %>
+                    <%= link_to  my_portfolio_path, class:'nav-link' do %>
+                      <%= fa_icon "folder-open"%> My_portfolio
+                    <% end%>
                 </li>
-                <li class="nav-item">
-                    <%= link_to "my_portfolio", my_portfolio_path, class:'nav-link' %>
+                <li class="nav-item <%= 'active' if request.path==my_friends_path %>">
+                    <%= link_to  my_friends_path, class:'nav-link' do %>
+                      <%= fa_icon " users" %> Friends
+                    <% end %>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Profile
+                    <%= fa_icon "user-circle" %> Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <%= link_to  edit_user_registration_path, class:"dropdown-item" do %>
@@ -27,9 +31,7 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class='nav-item user-name'>
